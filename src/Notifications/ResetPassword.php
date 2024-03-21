@@ -7,14 +7,14 @@
 
 namespace Seblhaire\Authbase\Notifications;
 
-use Illuminate\Auth\Notifications\ResetPassword;
+
 use Illuminate\Notifications\Messages\MailMessage;
 /**
  * Description of ResetPassword
  *
  * @author seb
  */
-abstract class ResetPasswordModel extends ResetPassword{
+abstract class ResetPassword extends Illuminate\Auth\Notifications\ResetPassword{
      /**
      * The password reset token.
      *
