@@ -8,7 +8,8 @@
 namespace Seblhaire\Authbase\Notifications;
 
 
-use \Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Support\Facades\Lang;
 /**
  * Description of ResetPassword
  *
