@@ -10,7 +10,6 @@ return [
     "passwordcreation" => "You are receiving this email because :user created an account for you.",
     "passwordreset" => "You are receiving this email because we received a password reset request for your account.",
     "regards" => "Regards",
-    "resetpassnotif" => "Reset Password",
     "sendpassreset" => "Send Password Reset Link",
     "whoops" => "Whoops!",
 ];
