@@ -22,7 +22,7 @@ class AuthbaseServiceProvider extends ServiceProvider {
             __DIR__ . '/../../lang' => app()->langPath('vendor/authbase'),
         ]);
         //$this->loadRoutesFrom(__DIR__ . '/../../routes/web.php');
-        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
+        //$this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
         $this->loadTranslationsFrom(__DIR__ . '/../../lang', 'authbase');
         Blade::anonymousComponentPath(__DIR__ . '/../../resources/components', 'authbase');
     }
@@ -34,9 +34,6 @@ class AuthbaseServiceProvider extends ServiceProvider {
      */
     public function register() {
         $this->mergeConfigFrom(__DIR__ . '/../../config/authbase.php', 'authbase');
-        /* \App::bind('AutocompleterService',function() {
-          return new AutocompleterService;
-          }); */
     }
 
     public function provides() {

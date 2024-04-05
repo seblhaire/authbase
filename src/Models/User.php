@@ -9,7 +9,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 // use Illuminate\Auth\MustVerifyEmail; this is not ncesssary since user mustget an email to create own password
-use Illuminate\Database\Eloquent\SoftDeletes;
+// use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
@@ -21,7 +21,7 @@ AuthenticatableContract, AuthorizableContract, CanResetPasswordContract {
     use Authenticatable,
         Authorizable,
         CanResetPassword,
-        SoftDeletes,
+        //SoftDeletes,
         Notifiable;
 
     protected $fillable = [
@@ -33,8 +33,17 @@ AuthenticatableContract, AuthorizableContract, CanResetPasswordContract {
         'password',
         'remember_token',
     ];
-    protected $with = [
-        'roles',
-        'profiles'
-    ];
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+    }
 }
