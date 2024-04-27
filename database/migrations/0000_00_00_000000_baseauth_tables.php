@@ -36,6 +36,9 @@ class SpecialauthTables extends Migration
             $table->integer('profile_id')->index();
             $table->json('value');
         });
+        Schema::table('users', function (Blueprint $table) {
+            $table->softDeletes();
+        });
     }
 
     /**
