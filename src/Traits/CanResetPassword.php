@@ -19,6 +19,7 @@ trait CanResetPassword {
      * Send the password reset notification.
      *
      * @param  string  $token
+     * @param  string  $email
      * @return void
      */
     public function sendPasswordCreateNotification($token, $email) {
@@ -31,10 +32,11 @@ trait CanResetPassword {
      * Send the password reset notification.
      *
      * @param  string  $token
+     * @param  string  $email
      * @return void
      */
-    public function sendPasswordResetNotification($token) {
+    public function sendPasswordResetNotification($token, $email) {
         $class = config('authbase.resetpasswordnotification');
-        $this->notify(new $class($token));
+        $this->notify(new $class($token, $email));
     }
 }
