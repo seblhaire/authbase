@@ -12,11 +12,12 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model as Eloquent;
+use Seblhaire\Authbase\Traits\RoleUtils;
 
 /* Replaces laravel's user that extends Illuminate\Foundation\Auth\User */
 
 class User extends Eloquent implements
-AuthenticatableContract, AuthorizableContract, CanResetPasswordContract {
+AuthenticatableContract, AuthorizableContract, CanResetPasswordContract, RoleUtils {
 
     use Authenticatable,
         Authorizable,
@@ -32,6 +33,10 @@ AuthenticatableContract, AuthorizableContract, CanResetPasswordContract {
     protected $hidden = [
         'password',
         'remember_token',
+    ];
+
+    protected $with = [
+        'roles'
     ];
 
     /**
