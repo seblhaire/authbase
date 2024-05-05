@@ -17,13 +17,14 @@ use Seblhaire\Authbase\Traits\RoleUtils;
 /* Replaces laravel's user that extends Illuminate\Foundation\Auth\User */
 
 class User extends Eloquent implements
-AuthenticatableContract, AuthorizableContract, CanResetPasswordContract, RoleUtils {
+AuthenticatableContract, AuthorizableContract, CanResetPasswordContract  {
 
     use Authenticatable,
         Authorizable,
         CanResetPassword,
         SoftDeletes,
-        Notifiable;
+        Notifiable, 
+        RoleUtils;
 
     protected $fillable = [
         'name',
