@@ -36,16 +36,9 @@ AuthenticatableContract, AuthorizableContract, CanResetPasswordContract  {
         'remember_token',
     ];
 
-    public function __construct(array $attributes = []){
-        parent::__construct($attributes);
-        $this->with = $this->buildWith();
-    }
-
-    public function buildWith(): array{
-        return  [
+    protected $with = [
             'roles'
         ];
-    }
 
     /**
      * Get the attributes that should be cast.
