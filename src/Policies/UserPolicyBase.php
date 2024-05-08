@@ -5,7 +5,7 @@ namespace Seblhaire\Authbase\Policies;
 use Seblhaire\Authbase\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class UserPolicy {
+class UserPolicyBase {
 
     use HandlesAuthorization;
 
