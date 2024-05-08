@@ -1,6 +1,9 @@
 <?php
 namespace Seblhaire\Authbase\Traits;
 
+use Illuminate\Support\Facades\Gate;
+use Seblhaire\Authbase\Models\User;
+
 
 trait GateTrait{
     public function boot() {
@@ -12,6 +15,5 @@ trait GateTrait{
         Gate::define('is_contributor', function ($user) {
             return $user->hasRole('contributor');
         });
-        Gate::policy(User::class, UserPolicy::class);
     }
 }
