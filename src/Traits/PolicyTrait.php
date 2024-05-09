@@ -1,23 +1,9 @@
 <?php
+namespace Seblhaire\Authbase\Traits;
 
-namespace Seblhaire\Authbase\Policies;
+use Seblhaire\Specialauth\Models\User; 
 
-use Seblhaire\Authbase\Models\User;
-use Illuminate\Auth\Access\HandlesAuthorization;
-
-class UserPolicyBase {
-
-    use HandlesAuthorization;
-
-    /**
-     * Create a new policy instance.
-     *
-     * @return void
-     */
-    public function __construct() {
-        //
-    }
-
+trait PolicyTrait{
     public function update(User $user, User $updateduser) {
         \Log::info($user->id . ' ' . $updateduser->id . ' ' . ($user->hasRole('administrator') ? 'admin': 'no'));
         return $user->hasRole('administrator') || $user->id === $updateduser->id;
