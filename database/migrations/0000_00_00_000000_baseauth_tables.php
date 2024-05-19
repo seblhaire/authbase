@@ -34,7 +34,7 @@ class BaseauthTables extends Migration
         Schema::create('profile_user', function (Blueprint $table) {
             $table->integer('user_id')->index();
             $table->integer('profile_id')->index();
-            $table->json('value');
+            $table->json('jsonvals');
         });
         Schema::table('users', function (Blueprint $table) {
             $table->softDeletes();
