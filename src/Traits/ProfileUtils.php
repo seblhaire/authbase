@@ -1,9 +1,11 @@
 <?php namespace Seblhaire\Authbase\Traits;
 
+use Seblhaire\Authbase\Models\Profile;
+
 trait ProfileUtils{
     
     public function profiles() {
-        return $this->belongsToMany(\Seblhaire\Authbase\Models\Profile::class)->withPivot('jsonvals');
+        return $this->belongsToMany(Profile::class)->withPivot('jsonvals');
     }
 
     public function profile($val) {

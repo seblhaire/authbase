@@ -2,7 +2,7 @@
 namespace Seblhaire\Authbase\Traits;
 
 use Illuminate\Support\Facades\Gate;
-use Seblhaire\Authbase\Models\User;
+
 
 
 trait GateTrait{

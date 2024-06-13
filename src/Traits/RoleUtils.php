@@ -1,9 +1,12 @@
 <?php namespace Seblhaire\Authbase\Traits;
 
+use Seblhaire\Authbase\Models\Role;
+
+
 trait RoleUtils{
     
     public function roles() {
-        return $this->belongsToMany(\Seblhaire\Authbase\Models\Role::class);
+        return $this->belongsToMany(Role::class);
     }
 
     public function hasRole($role) {
