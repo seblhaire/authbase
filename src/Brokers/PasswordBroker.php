@@ -74,7 +74,7 @@ class PasswordBroker implements PasswordBrokerContract {
         return static::RESET_LINK_SENT;
     }
 
-    public function sendResetLink2(array $credentials) {
+    public function sendCreatePassLink(array $credentials) {
         // First we will check to see if we found a user at the given credentials and
         // if we did not we will redirect back to this current URI with a piece of
         // "flash" data in the session to indicate to the developers the errors.
