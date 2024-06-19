@@ -28,7 +28,7 @@ Base package provides :
 ]
 ```
 3. Publish package: `php artisan vendor:publish`
-4. Config package (cf. [below](#config-file)).
+4. Config package (cf. [below](#configuration-file)).
 5. Complete [templates](#templates).
 6. Apply [database migrations](#database-migration).
 7. Extend [notifications](#notifications).
