@@ -5,7 +5,7 @@ This library is a base package for user management and authentication that can b
 
 * [Seblhaire\Specialauth](https://github.com/seblhaire/specialauth)
 
-Package [Laravel Breeze](https://laravel.com/docs/11.x/starter-kits#laravel-breeze) is very useful. However, users can register themselves automatically and this is not always convenient. Instead, application accounts could be created by users with administrator rights.
+Package [Laravel Breeze](https://laravel.com/docs/11.x/starter-kits#laravel-breeze) is very useful. However, users can register themselves automatically and this is not always convenient. Instead, you could need that application accounts could be created by users with administrator rights.
 
 
 Base package provides :
@@ -19,7 +19,7 @@ Base package provides :
 
 # Installation
 
-1. `composer require seblhaire/authbase`
+1. We strongly recommend that you do not install this package alone. We suggest that you install one of the above mentioned packages instead, according to your needs. But if you wish to use only this package, use `composer require seblhaire/authbase`
 2. Composer will automatically link the package with Laravel. But you still can explicitely add provider and facade to your `config/app.php`:
 ```php
 'providers' => [
